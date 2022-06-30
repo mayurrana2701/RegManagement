@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="FakesAssemblies\**" />
+    <EmbeddedResource Remove="FakesAssemblies\**" />
+    <None Remove="FakesAssemblies\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Fakes\System.fakes" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Fakes Include="Fakes\System.fakes" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.QualityTools.Testing.Fakes" Version="16.6.2-beta.20207.6" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
+  </ItemGroup>
+
+</Project>
